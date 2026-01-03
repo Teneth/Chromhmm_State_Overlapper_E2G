@@ -3,13 +3,13 @@ Using the Vu et al. 100 state chromatin model, this R script function will find 
 # Assays
 ```
  Choose assays_calculating wanted. This function can do 5 things:
- 1 "boolean_overlap" ## Calculates the most simply presence or absence of region to state overlap, given as 1 or 0 < br / >
- 2 "percent_overlap" ## Calculates the % overlap for each region and state, 0 to 1 (100%), also defines majority state < br / >
- 2b "majority_state" Calculate winning max % feature < br / >
- 2c "bool_pct_overlap" Calculate boolean of overlap % based on given cutoff parameter. More strict than original boolean overlap < br / >
- 3 "boolean_distance" ## Calculates distance from edge of assayed region to edge of each chromatin state  < br / >
-       Note, distance measures 3 and 4 are slow, takes 20 minutes for a 200k region file < br / >
- 4 "dist_to_feature" , the bp edge to edge data. Requires option 3 calc be ran < br / >
+ 1 "boolean_overlap" ## Calculates the most simply presence or absence of region to state overlap, given as 1 or 0 
+ 2 "percent_overlap" ## Calculates the % overlap for each region and state, 0 to 1 (100%), also defines majority state 
+ 2b "majority_state" Calculate winning max % feature 
+ 2c "bool_pct_overlap" Calculate boolean of overlap % based on given cutoff parameter. More strict than original boolean overlap 
+ 3 "boolean_distance" ## Calculates distance from edge of assayed region to edge of each chromatin state 
+       Note, distance measures 3 and 4 are slow, takes 20 minutes for a 200k region file 
+ 4 "dist_to_feature" , the bp edge to edge data. Requires option 3 calc be ran 
 ```
 # Dependencies
 ```
@@ -41,3 +41,14 @@ final.table <- CreateStateIntersectFile(Sample_file= Sample_df, ## Your provided
                                      WriteOutput=T)
 ```
 Defaults for parameters are as shown. If you wish to load a different state model in, provide Model_df to the ProvideModel option with columns : start stop end state
+
+# Use downloaded data
+```
+## Prepare the downloaded file like this then you can use DownloadVuModel=F and ProvideModel=chrohmm.table options
+chromhmm.table <- fread(paste0("/projectdir/havu_chromhmm_100state.bed.gz"), sep="\t")
+colnames(chromhmm.table) <- c("chr", "start", "end", "state")
+chromhmm.table$chromhmm_start <- chromhmm.table$start
+chromhmm.table$chromhmm_end <- chromhmm.table$end
+chromhmm.table$state <- sapply(strsplit(chromhmm.table$state, "_"), "[[",2)
+
+```
