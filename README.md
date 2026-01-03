@@ -1,4 +1,6 @@
-Using the Vu et al. 100 state chromatin model, this R script function will find and output overlap. Calculates as follows -
+Using the Vu et al. 100 state chromatin model from the paper "Universal annotation of the human genome through integration of over a thousand epigenomic datasets" - https://pubmed.ncbi.nlm.nih.gov/34991667/
+  
+This R script function will find and output overlap. Calculates as follows -
 
 # Assays
 ```
