@@ -28,14 +28,14 @@ Sample_df <- fread("/location/your_region_file.txt",
 # c("ElementChr","ElementStart","ElementEnd")
 
 
-final.table <- CreateStateIntersectFile(Sample_file= Sample_df,
-                                     ExpName="YS3_ATAC_testrun_modelDL",
-                                     working_directory="/u/project/kp1/jlangerm/Projects/IGVF/R_Analysis/Analysis/2025-12-23_E2G_ChromHMM_Boolean_Features/",
-                                     DownloadVuModel=T,
+final.table <- CreateStateIntersectFile(Sample_file= Sample_df, ## Your provided region file
+                                     ExpName="ExpName",  ##Name the run
+                                     working_directory="/projectdir/", ## location needed for state download and output write 
+                                     DownloadVuModel=T, ## T or False if you wish to provide your own data/ already have it downloaded
                                      ProvideModel="none", ## or Model_df, Must have columns - chr start stop state
-                                     assays_calculating = c("boolean_overlap","percent_overlap","majority_state","bool_pct_overlap","boolean_distance","dist_to_feature"),
+                                     assays_calculating = c("boolean_overlap","percent_overlap","majority_state","bool_pct_overlap","boolean_distance","dist_to_feature"), ##Pick any combination
                                      pct_overlap_cutoff = 0.5, ##Fraction cutoff for "bool_pct_overlap"
-                                     distance_wanted = 10000,
+                                     distance_wanted = 10000,  ##Basepair cutoff for "boolean_distance"
                                      WriteOutput=T)
 ```
 Defaults for parameters are as shown. If you wish to load a different state model in, provide Model_df to the ProvideModel option with columns : start stop end state
