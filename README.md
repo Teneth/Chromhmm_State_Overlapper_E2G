@@ -1,6 +1,8 @@
 Using the Vu et al. 100 state chromatin model, this R script function will find and output overlap. Calculates as follows -
 
-# Choose assays_calculating wanted. This function can do 5 things:
+# Assays
+```
+ Choose assays_calculating wanted. This function can do 5 things:
  1 "boolean_overlap" ## Calculates the most simply presence or absence of region to state overlap, given as 1 or 0 < br / >
  2 "percent_overlap" ## Calculates the % overlap for each region and state, 0 to 1 (100%), also defines majority state < br / >
  2b "majority_state" Calculate winning max % feature < br / >
@@ -8,7 +10,7 @@ Using the Vu et al. 100 state chromatin model, this R script function will find 
  3 "boolean_distance" ## Calculates distance from edge of assayed region to edge of each chromatin state  < br / >
        Note, distance measures 3 and 4 are slow, takes 20 minutes for a 200k region file < br / >
  4 "dist_to_feature" , the bp edge to edge data. Requires option 3 calc be ran < br / >
-
+```
 # Dependencies
 ```
 library(dplyr)
