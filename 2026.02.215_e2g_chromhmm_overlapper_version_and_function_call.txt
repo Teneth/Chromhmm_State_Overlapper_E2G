@@ -41,7 +41,7 @@ loaded via a namespace (and not attached):
 
 ## Function call
 
-source("/local/E2G_Jamboree/2025.12_E2G_chromhmm_overlap_function_v0.21.R")
+source("/local/2025.12_E2G_chromhmm_overlap_function_v0.23.R")
 
 
 chromhmm.table <- fread(paste0("/local/Analysis/2025-12-23_E2G_ChromHMM_Boolean_Features/havu_chromhmm_100state.bed.gz"), sep="\t")
@@ -82,6 +82,7 @@ final.table <- CreateStateIntersectFile(Sample_file= Sample_df, ## Your provided
                                         pct_overlap_cutoff = 0.5, ##Fraction cutoff for "bool_pct_overlap"
                                         distance_wanted = 10000,  ##Basepair cutoff for "boolean_distance"
                                         WriteOutput=T)
+
 
 
 
