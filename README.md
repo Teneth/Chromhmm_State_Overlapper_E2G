@@ -36,6 +36,7 @@ final.table <- CreateStateIntersectFile(Sample_file= Sample_df, ## Your provided
                                      ExpName="ExpName",  ##Name the run
                                      working_directory="/projectdir/", ## location needed for state download and output write 
                                      DownloadVuModel=T, ## T or False if you wish to provide your own data/ already have it downloaded
+                                     Group_states=T, ## group states from 100 to 14. Choose F if you want 100 or are providing your own model
                                      ProvideModel="none", ## or Model_df, Must have columns - chr start stop state
                                      assays_calculating = c("boolean_overlap","percent_overlap","majority_state","bool_pct_overlap","boolean_distance","dist_to_feature"), ##Pick any combination
                                      pct_overlap_cutoff = 0.5, ##Fraction cutoff for "bool_pct_overlap"
