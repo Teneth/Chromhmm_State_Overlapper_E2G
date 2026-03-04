@@ -142,7 +142,7 @@ CreateStateIntersectFile <- function(Sample_file= Sample_df,
   
   
   
-  if(Group_states=T){
+  if(Group_states==T){
   ##Classify states into 14 useful broad categories
   
   
@@ -459,6 +459,7 @@ CreateStateIntersectFile <- function(Sample_file= Sample_df,
     final.e2g.table
   }
   
+
 
 
 
