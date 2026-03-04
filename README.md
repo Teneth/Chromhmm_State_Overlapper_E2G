@@ -10,7 +10,7 @@ This R script function will find and output overlap. Calculates as follows -
  3 "majority_state" Calculate winning max % feature, gives name of winning state per region 
  4 "bool_pct_overlap" Calculate boolean of overlap % based on given cutoff parameter. More strict than original boolean overlap 1
  5 "boolean_distance" ## Calculates distance from edge of assayed region to edge of each chromatin state 
-       Note, distance measures 3 and 4 are slow due to dist calculation, takes 12 minutes for a 200k region file 
+       Note, distance measures are slow due to dist calculation, takes 12 minutes for a 200k region file 
  6 "dist_to_feature" , the bp edge to edge data. 0 indicates overlapping edges between state and region
 ```
 # Dependencies
